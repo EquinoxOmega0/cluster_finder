@@ -1,0 +1,974 @@
+select S.fofId,S.subhaloId
+  from MField..FofSubHalo as S
+ where S.snapnum=63
+
+
+wget  -O id63.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select S.fofId,S.subhaloId from MField..FofSubHalo as S  where S.snapnum=63"
+wget  -O id62.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select S.fofId,S.subhaloId from MField..FofSubHalo as S  where S.snapnum=62"
+wget  -O id61.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select S.fofId,S.subhaloId from MField..FofSubHalo as S  where S.snapnum=61"
+wget  -O id60.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select S.fofId,S.subhaloId from MField..FofSubHalo as S  where S.snapnum=60"
+wget  -O id59.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select S.fofId,S.subhaloId from MField..FofSubHalo as S  where S.snapnum=59"
+wget  -O id58.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select S.fofId,S.subhaloId from MField..FofSubHalo as S  where S.snapnum=58"
+
+ select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.g_mag,G1.r_mag,G1.i_mag,G1.gDust,G1.rDust,G1.iDust
+  from Guo2010a..MR as G1
+ where G1.snapnum=63
+   and G1.rDust<-15
+   and G1.x<125
+   and G1.x>0
+   
+   
+   
+   #wget  -O gal63-1.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=63    and G1.x<50   and G1.x>0 and G1.rDust<-15"
+#wget  -O gal63-1b.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.g_mag,G1.r_mag,G1.i_mag,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S left outer join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63   and G1.rDust<-15   and G1.x<50   and G1.x>0"
+#wget  -O gal63-1c.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.g_mag,G1.r_mag,G1.i_mag,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S left outer join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63   and S.snapnum=63   and  G1.rDust<-15   and G1.x<50   and G1.x>0"
+#wget  -O gal63-1d.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.g_mag,G1.r_mag,G1.i_mag,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S INNER JOIN Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63   and S.snapnum=63   and  G1.rDust<-15   and G1.x<50   and G1.x>0"
+
+
+ select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust
+  from MField..FofSubHalo as S inner join Guo2010a..MR as G1
+on S.subhaloId = G1.fofID
+ where G1.snapnum=63
+ and S.snapnum=63
+   and G1.rDust<-15
+   and G1.x<50
+   and G1.x>0
+   
+wget  -O gal63-1.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<50   and G1.x>0 and G1.y<100   and G1.y>0"
+wget  -O gal62-1.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<50   and G1.x>0 and G1.y<100   and G1.y>0"
+wget  -O gal61-1.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<50   and G1.x>0 and G1.y<100   and G1.y>0"
+wget  -O gal60-1.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<50   and G1.x>0 and G1.y<100   and G1.y>0"
+wget  -O gal59-1.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<50   and G1.x>0 and G1.y<100   and G1.y>0"
+wget  -O gal58-1.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<50   and G1.x>0 and G1.y<100   and G1.y>0"
+wget  -O gal63-2.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<100   and G1.x>50 and G1.y<100   and G1.y>0"
+wget  -O gal62-2.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<100   and G1.x>50 and G1.y<100   and G1.y>0"
+wget  -O gal61-2.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<100   and G1.x>50 and G1.y<100   and G1.y>0"
+wget  -O gal60-2.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<100   and G1.x>50 and G1.y<100   and G1.y>0"
+wget  -O gal59-2.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<100   and G1.x>50 and G1.y<100   and G1.y>0"
+wget  -O gal58-2.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<100   and G1.x>50 and G1.y<100   and G1.y>0"
+wget  -O gal63-3.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<150   and G1.x>100 and G1.y<100   and G1.y>0"
+wget  -O gal62-3.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<150   and G1.x>100 and G1.y<100   and G1.y>0"
+wget  -O gal61-3.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<150   and G1.x>100 and G1.y<100   and G1.y>0"
+wget  -O gal60-3.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<150   and G1.x>100 and G1.y<100   and G1.y>0"
+wget  -O gal59-3.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<150   and G1.x>100 and G1.y<100   and G1.y>0"
+wget  -O gal58-3.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<150   and G1.x>100 and G1.y<100   and G1.y>0"
+wget  -O gal63-4.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<200   and G1.x>150 and G1.y<100   and G1.y>0"
+wget  -O gal62-4.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<200   and G1.x>150 and G1.y<100   and G1.y>0"
+wget  -O gal61-4.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<200   and G1.x>150 and G1.y<100   and G1.y>0"
+wget  -O gal60-4.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<200   and G1.x>150 and G1.y<100   and G1.y>0"
+wget  -O gal59-4.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<200   and G1.x>150 and G1.y<100   and G1.y>0"
+wget  -O gal58-4.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<200   and G1.x>150 and G1.y<100   and G1.y>0"
+wget  -O gal63-5.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<250   and G1.x>200 and G1.y<100   and G1.y>0"
+wget  -O gal62-5.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<250   and G1.x>200 and G1.y<100   and G1.y>0"
+wget  -O gal61-5.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<250   and G1.x>200 and G1.y<100   and G1.y>0"
+wget  -O gal60-5.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<250   and G1.x>200 and G1.y<100   and G1.y>0"
+wget  -O gal59-5.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<250   and G1.x>200 and G1.y<100   and G1.y>0"
+wget  -O gal58-5.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<250   and G1.x>200 and G1.y<100   and G1.y>0"
+wget  -O gal63-6.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<300   and G1.x>250 and G1.y<100   and G1.y>0"
+wget  -O gal62-6.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<300   and G1.x>250 and G1.y<100   and G1.y>0"
+wget  -O gal61-6.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<300   and G1.x>250 and G1.y<100   and G1.y>0"
+wget  -O gal60-6.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<300   and G1.x>250 and G1.y<100   and G1.y>0"
+wget  -O gal59-6.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<300   and G1.x>250 and G1.y<100   and G1.y>0"
+wget  -O gal58-6.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<300   and G1.x>250 and G1.y<100   and G1.y>0"
+wget  -O gal63-7.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<350   and G1.x>300 and G1.y<100   and G1.y>0"
+wget  -O gal62-7.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<350   and G1.x>300 and G1.y<100   and G1.y>0"
+wget  -O gal61-7.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<350   and G1.x>300 and G1.y<100   and G1.y>0"
+wget  -O gal60-7.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<350   and G1.x>300 and G1.y<100   and G1.y>0"
+wget  -O gal59-7.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<350   and G1.x>300 and G1.y<100   and G1.y>0"
+wget  -O gal58-7.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<350   and G1.x>300 and G1.y<100   and G1.y>0"
+wget  -O gal63-8.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<400   and G1.x>350 and G1.y<100   and G1.y>0"
+wget  -O gal62-8.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<400   and G1.x>350 and G1.y<100   and G1.y>0"
+wget  -O gal61-8.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<400   and G1.x>350 and G1.y<100   and G1.y>0"
+wget  -O gal60-8.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<400   and G1.x>350 and G1.y<100   and G1.y>0"
+wget  -O gal59-8.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<400   and G1.x>350 and G1.y<100   and G1.y>0"
+wget  -O gal58-8.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<400   and G1.x>350 and G1.y<100   and G1.y>0"
+wget  -O gal63-9.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<450   and G1.x>400 and G1.y<100   and G1.y>0"
+wget  -O gal62-9.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<450   and G1.x>400 and G1.y<100   and G1.y>0"
+wget  -O gal61-9.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<450   and G1.x>400 and G1.y<100   and G1.y>0"
+wget  -O gal60-9.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<450   and G1.x>400 and G1.y<100   and G1.y>0"
+wget  -O gal59-9.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<450   and G1.x>400 and G1.y<100   and G1.y>0"
+wget  -O gal58-9.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<450   and G1.x>400 and G1.y<100   and G1.y>0"
+wget  -O gal63-10.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<500   and G1.x>450 and G1.y<100   and G1.y>0"
+wget  -O gal62-10.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<500   and G1.x>450 and G1.y<100   and G1.y>0"
+wget  -O gal61-10.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<500   and G1.x>450 and G1.y<100   and G1.y>0"
+wget  -O gal60-10.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<500   and G1.x>450 and G1.y<100   and G1.y>0"
+wget  -O gal59-10.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<500   and G1.x>450 and G1.y<100   and G1.y>0"
+wget  -O gal58-10.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<500   and G1.x>450 and G1.y<100   and G1.y>0"
+wget  -O gal63-11.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<50   and G1.x>0 and G1.y<200   and G1.y>100"
+wget  -O gal62-11.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<50   and G1.x>0 and G1.y<200   and G1.y>100"
+wget  -O gal61-11.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<50   and G1.x>0 and G1.y<200   and G1.y>100"
+wget  -O gal60-11.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<50   and G1.x>0 and G1.y<200   and G1.y>100"
+wget  -O gal59-11.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<50   and G1.x>0 and G1.y<200   and G1.y>100"
+wget  -O gal58-11.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<50   and G1.x>0 and G1.y<200   and G1.y>100"
+wget  -O gal63-12.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<100   and G1.x>50 and G1.y<200   and G1.y>100"
+wget  -O gal62-12.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<100   and G1.x>50 and G1.y<200   and G1.y>100"
+wget  -O gal61-12.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<100   and G1.x>50 and G1.y<200   and G1.y>100"
+wget  -O gal60-12.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<100   and G1.x>50 and G1.y<200   and G1.y>100"
+wget  -O gal59-12.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<100   and G1.x>50 and G1.y<200   and G1.y>100"
+wget  -O gal58-12.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<100   and G1.x>50 and G1.y<200   and G1.y>100"
+wget  -O gal63-13.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<150   and G1.x>100 and G1.y<200   and G1.y>100"
+wget  -O gal62-13.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<150   and G1.x>100 and G1.y<200   and G1.y>100"
+wget  -O gal61-13.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<150   and G1.x>100 and G1.y<200   and G1.y>100"
+wget  -O gal60-13.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<150   and G1.x>100 and G1.y<200   and G1.y>100"
+wget  -O gal59-13.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<150   and G1.x>100 and G1.y<200   and G1.y>100"
+wget  -O gal58-13.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<150   and G1.x>100 and G1.y<200   and G1.y>100"
+wget  -O gal63-14.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<200   and G1.x>150 and G1.y<200   and G1.y>100"
+wget  -O gal62-14.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<200   and G1.x>150 and G1.y<200   and G1.y>100"
+wget  -O gal61-14.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<200   and G1.x>150 and G1.y<200   and G1.y>100"
+wget  -O gal60-14.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<200   and G1.x>150 and G1.y<200   and G1.y>100"
+wget  -O gal59-14.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<200   and G1.x>150 and G1.y<200   and G1.y>100"
+wget  -O gal58-14.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<200   and G1.x>150 and G1.y<200   and G1.y>100"
+wget  -O gal63-15.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<250   and G1.x>200 and G1.y<200   and G1.y>100"
+wget  -O gal62-15.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<250   and G1.x>200 and G1.y<200   and G1.y>100"
+wget  -O gal61-15.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<250   and G1.x>200 and G1.y<200   and G1.y>100"
+wget  -O gal60-15.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<250   and G1.x>200 and G1.y<200   and G1.y>100"
+wget  -O gal59-15.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<250   and G1.x>200 and G1.y<200   and G1.y>100"
+wget  -O gal58-15.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<250   and G1.x>200 and G1.y<200   and G1.y>100"
+wget  -O gal63-16.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<300   and G1.x>250 and G1.y<200   and G1.y>100"
+wget  -O gal62-16.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<300   and G1.x>250 and G1.y<200   and G1.y>100"
+wget  -O gal61-16.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<300   and G1.x>250 and G1.y<200   and G1.y>100"
+wget  -O gal60-16.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<300   and G1.x>250 and G1.y<200   and G1.y>100"
+wget  -O gal59-16.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<300   and G1.x>250 and G1.y<200   and G1.y>100"
+wget  -O gal58-16.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<300   and G1.x>250 and G1.y<200   and G1.y>100"
+wget  -O gal63-17.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<350   and G1.x>300 and G1.y<200   and G1.y>100"
+wget  -O gal62-17.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<350   and G1.x>300 and G1.y<200   and G1.y>100"
+wget  -O gal61-17.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<350   and G1.x>300 and G1.y<200   and G1.y>100"
+wget  -O gal60-17.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<350   and G1.x>300 and G1.y<200   and G1.y>100"
+wget  -O gal59-17.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<350   and G1.x>300 and G1.y<200   and G1.y>100"
+wget  -O gal58-17.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<350   and G1.x>300 and G1.y<200   and G1.y>100"
+wget  -O gal63-18.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<400   and G1.x>350 and G1.y<200   and G1.y>100"
+wget  -O gal62-18.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<400   and G1.x>350 and G1.y<200   and G1.y>100"
+wget  -O gal61-18.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<400   and G1.x>350 and G1.y<200   and G1.y>100"
+wget  -O gal60-18.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<400   and G1.x>350 and G1.y<200   and G1.y>100"
+wget  -O gal59-18.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<400   and G1.x>350 and G1.y<200   and G1.y>100"
+wget  -O gal58-18.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<400   and G1.x>350 and G1.y<200   and G1.y>100"
+wget  -O gal63-19.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<450   and G1.x>400 and G1.y<200   and G1.y>100"
+wget  -O gal62-19.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<450   and G1.x>400 and G1.y<200   and G1.y>100"
+wget  -O gal61-19.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<450   and G1.x>400 and G1.y<200   and G1.y>100"
+wget  -O gal60-19.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<450   and G1.x>400 and G1.y<200   and G1.y>100"
+wget  -O gal59-19.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<450   and G1.x>400 and G1.y<200   and G1.y>100"
+wget  -O gal58-19.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<450   and G1.x>400 and G1.y<200   and G1.y>100"
+wget  -O gal63-20.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<500   and G1.x>450 and G1.y<200   and G1.y>100"
+wget  -O gal62-20.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<500   and G1.x>450 and G1.y<200   and G1.y>100"
+wget  -O gal61-20.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<500   and G1.x>450 and G1.y<200   and G1.y>100"
+wget  -O gal60-20.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<500   and G1.x>450 and G1.y<200   and G1.y>100"
+wget  -O gal59-20.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<500   and G1.x>450 and G1.y<200   and G1.y>100"
+wget  -O gal58-20.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<500   and G1.x>450 and G1.y<200   and G1.y>100"
+wget  -O gal63-21.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<50   and G1.x>0 and G1.y<300   and G1.y>200"
+wget  -O gal62-21.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<50   and G1.x>0 and G1.y<300   and G1.y>200"
+wget  -O gal61-21.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<50   and G1.x>0 and G1.y<300   and G1.y>200"
+wget  -O gal60-21.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<50   and G1.x>0 and G1.y<300   and G1.y>200"
+wget  -O gal59-21.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<50   and G1.x>0 and G1.y<300   and G1.y>200"
+wget  -O gal58-21.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<50   and G1.x>0 and G1.y<300   and G1.y>200"
+wget  -O gal63-22.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<100   and G1.x>50 and G1.y<300   and G1.y>200"
+wget  -O gal62-22.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<100   and G1.x>50 and G1.y<300   and G1.y>200"
+wget  -O gal61-22.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<100   and G1.x>50 and G1.y<300   and G1.y>200"
+wget  -O gal60-22.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<100   and G1.x>50 and G1.y<300   and G1.y>200"
+wget  -O gal59-22.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<100   and G1.x>50 and G1.y<300   and G1.y>200"
+wget  -O gal58-22.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<100   and G1.x>50 and G1.y<300   and G1.y>200"
+wget  -O gal63-23.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<150   and G1.x>100 and G1.y<300   and G1.y>200"
+wget  -O gal62-23.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<150   and G1.x>100 and G1.y<300   and G1.y>200"
+wget  -O gal61-23.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<150   and G1.x>100 and G1.y<300   and G1.y>200"
+wget  -O gal60-23.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<150   and G1.x>100 and G1.y<300   and G1.y>200"
+wget  -O gal59-23.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<150   and G1.x>100 and G1.y<300   and G1.y>200"
+wget  -O gal58-23.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<150   and G1.x>100 and G1.y<300   and G1.y>200"
+wget  -O gal63-24.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<200   and G1.x>150 and G1.y<300   and G1.y>200"
+wget  -O gal62-24.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<200   and G1.x>150 and G1.y<300   and G1.y>200"
+wget  -O gal61-24.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<200   and G1.x>150 and G1.y<300   and G1.y>200"
+wget  -O gal60-24.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<200   and G1.x>150 and G1.y<300   and G1.y>200"
+wget  -O gal59-24.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<200   and G1.x>150 and G1.y<300   and G1.y>200"
+wget  -O gal58-24.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<200   and G1.x>150 and G1.y<300   and G1.y>200"
+wget  -O gal63-25.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<250   and G1.x>200 and G1.y<300   and G1.y>200"
+wget  -O gal62-25.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<250   and G1.x>200 and G1.y<300   and G1.y>200"
+wget  -O gal61-25.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<250   and G1.x>200 and G1.y<300   and G1.y>200"
+wget  -O gal60-25.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<250   and G1.x>200 and G1.y<300   and G1.y>200"
+wget  -O gal59-25.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<250   and G1.x>200 and G1.y<300   and G1.y>200"
+wget  -O gal58-25.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<250   and G1.x>200 and G1.y<300   and G1.y>200"
+wget  -O gal63-26.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<300   and G1.x>250 and G1.y<300   and G1.y>200"
+wget  -O gal62-26.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<300   and G1.x>250 and G1.y<300   and G1.y>200"
+wget  -O gal61-26.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<300   and G1.x>250 and G1.y<300   and G1.y>200"
+wget  -O gal60-26.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<300   and G1.x>250 and G1.y<300   and G1.y>200"
+wget  -O gal59-26.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<300   and G1.x>250 and G1.y<300   and G1.y>200"
+wget  -O gal58-26.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<300   and G1.x>250 and G1.y<300   and G1.y>200"
+wget  -O gal63-27.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<350   and G1.x>300 and G1.y<300   and G1.y>200"
+wget  -O gal62-27.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<350   and G1.x>300 and G1.y<300   and G1.y>200"
+wget  -O gal61-27.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<350   and G1.x>300 and G1.y<300   and G1.y>200"
+wget  -O gal60-27.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<350   and G1.x>300 and G1.y<300   and G1.y>200"
+wget  -O gal59-27.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<350   and G1.x>300 and G1.y<300   and G1.y>200"
+wget  -O gal58-27.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<350   and G1.x>300 and G1.y<300   and G1.y>200"
+wget  -O gal63-28.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<400   and G1.x>350 and G1.y<300   and G1.y>200"
+wget  -O gal62-28.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<400   and G1.x>350 and G1.y<300   and G1.y>200"
+wget  -O gal61-28.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<400   and G1.x>350 and G1.y<300   and G1.y>200"
+wget  -O gal60-28.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<400   and G1.x>350 and G1.y<300   and G1.y>200"
+wget  -O gal59-28.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<400   and G1.x>350 and G1.y<300   and G1.y>200"
+wget  -O gal58-28.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<400   and G1.x>350 and G1.y<300   and G1.y>200"
+wget  -O gal63-29.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<450   and G1.x>400 and G1.y<300   and G1.y>200"
+wget  -O gal62-29.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<450   and G1.x>400 and G1.y<300   and G1.y>200"
+wget  -O gal61-29.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<450   and G1.x>400 and G1.y<300   and G1.y>200"
+wget  -O gal60-29.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<450   and G1.x>400 and G1.y<300   and G1.y>200"
+wget  -O gal59-29.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<450   and G1.x>400 and G1.y<300   and G1.y>200"
+wget  -O gal58-29.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<450   and G1.x>400 and G1.y<300   and G1.y>200"
+wget  -O gal63-30.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<500   and G1.x>450 and G1.y<300   and G1.y>200"
+wget  -O gal62-30.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<500   and G1.x>450 and G1.y<300   and G1.y>200"
+wget  -O gal61-30.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<500   and G1.x>450 and G1.y<300   and G1.y>200"
+wget  -O gal60-30.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<500   and G1.x>450 and G1.y<300   and G1.y>200"
+wget  -O gal59-30.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<500   and G1.x>450 and G1.y<300   and G1.y>200"
+wget  -O gal58-30.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<500   and G1.x>450 and G1.y<300   and G1.y>200"
+wget  -O gal63-31.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<50   and G1.x>0 and G1.y<400   and G1.y>300"
+wget  -O gal62-31.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<50   and G1.x>0 and G1.y<400   and G1.y>300"
+wget  -O gal61-31.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<50   and G1.x>0 and G1.y<400   and G1.y>300"
+wget  -O gal60-31.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<50   and G1.x>0 and G1.y<400   and G1.y>300"
+wget  -O gal59-31.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<50   and G1.x>0 and G1.y<400   and G1.y>300"
+wget  -O gal58-31.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<50   and G1.x>0 and G1.y<400   and G1.y>300"
+wget  -O gal63-32.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<100   and G1.x>50 and G1.y<400   and G1.y>300"
+wget  -O gal62-32.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<100   and G1.x>50 and G1.y<400   and G1.y>300"
+wget  -O gal61-32.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<100   and G1.x>50 and G1.y<400   and G1.y>300"
+wget  -O gal60-32.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<100   and G1.x>50 and G1.y<400   and G1.y>300"
+wget  -O gal59-32.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<100   and G1.x>50 and G1.y<400   and G1.y>300"
+wget  -O gal58-32.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<100   and G1.x>50 and G1.y<400   and G1.y>300"
+wget  -O gal63-33.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<150   and G1.x>100 and G1.y<400   and G1.y>300"
+wget  -O gal62-33.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<150   and G1.x>100 and G1.y<400   and G1.y>300"
+wget  -O gal61-33.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<150   and G1.x>100 and G1.y<400   and G1.y>300"
+wget  -O gal60-33.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<150   and G1.x>100 and G1.y<400   and G1.y>300"
+wget  -O gal59-33.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<150   and G1.x>100 and G1.y<400   and G1.y>300"
+wget  -O gal58-33.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<150   and G1.x>100 and G1.y<400   and G1.y>300"
+wget  -O gal63-34.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<200   and G1.x>150 and G1.y<400   and G1.y>300"
+wget  -O gal62-34.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<200   and G1.x>150 and G1.y<400   and G1.y>300"
+wget  -O gal61-34.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<200   and G1.x>150 and G1.y<400   and G1.y>300"
+wget  -O gal60-34.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<200   and G1.x>150 and G1.y<400   and G1.y>300"
+wget  -O gal59-34.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<200   and G1.x>150 and G1.y<400   and G1.y>300"
+wget  -O gal58-34.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<200   and G1.x>150 and G1.y<400   and G1.y>300"
+wget  -O gal63-35.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<250   and G1.x>200 and G1.y<400   and G1.y>300"
+wget  -O gal62-35.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<250   and G1.x>200 and G1.y<400   and G1.y>300"
+wget  -O gal61-35.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<250   and G1.x>200 and G1.y<400   and G1.y>300"
+wget  -O gal60-35.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<250   and G1.x>200 and G1.y<400   and G1.y>300"
+wget  -O gal59-35.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<250   and G1.x>200 and G1.y<400   and G1.y>300"
+wget  -O gal58-35.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<250   and G1.x>200 and G1.y<400   and G1.y>300"
+wget  -O gal63-36.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<300   and G1.x>250 and G1.y<400   and G1.y>300"
+wget  -O gal62-36.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<300   and G1.x>250 and G1.y<400   and G1.y>300"
+wget  -O gal61-36.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<300   and G1.x>250 and G1.y<400   and G1.y>300"
+wget  -O gal60-36.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<300   and G1.x>250 and G1.y<400   and G1.y>300"
+wget  -O gal59-36.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<300   and G1.x>250 and G1.y<400   and G1.y>300"
+wget  -O gal58-36.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<300   and G1.x>250 and G1.y<400   and G1.y>300"
+wget  -O gal63-37.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<350   and G1.x>300 and G1.y<400   and G1.y>300"
+wget  -O gal62-37.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<350   and G1.x>300 and G1.y<400   and G1.y>300"
+wget  -O gal61-37.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<350   and G1.x>300 and G1.y<400   and G1.y>300"
+wget  -O gal60-37.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<350   and G1.x>300 and G1.y<400   and G1.y>300"
+wget  -O gal59-37.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<350   and G1.x>300 and G1.y<400   and G1.y>300"
+wget  -O gal58-37.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<350   and G1.x>300 and G1.y<400   and G1.y>300"
+wget  -O gal63-38.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<400   and G1.x>350 and G1.y<400   and G1.y>300"
+wget  -O gal62-38.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<400   and G1.x>350 and G1.y<400   and G1.y>300"
+wget  -O gal61-38.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<400   and G1.x>350 and G1.y<400   and G1.y>300"
+wget  -O gal60-38.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<400   and G1.x>350 and G1.y<400   and G1.y>300"
+wget  -O gal59-38.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<400   and G1.x>350 and G1.y<400   and G1.y>300"
+wget  -O gal58-38.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<400   and G1.x>350 and G1.y<400   and G1.y>300"
+wget  -O gal63-39.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<450   and G1.x>400 and G1.y<400   and G1.y>300"
+wget  -O gal62-39.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<450   and G1.x>400 and G1.y<400   and G1.y>300"
+wget  -O gal61-39.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<450   and G1.x>400 and G1.y<400   and G1.y>300"
+wget  -O gal60-39.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<450   and G1.x>400 and G1.y<400   and G1.y>300"
+wget  -O gal59-39.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<450   and G1.x>400 and G1.y<400   and G1.y>300"
+wget  -O gal58-39.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<450   and G1.x>400 and G1.y<400   and G1.y>300"
+wget  -O gal63-40.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<500   and G1.x>450 and G1.y<400   and G1.y>300"
+wget  -O gal62-40.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<500   and G1.x>450 and G1.y<400   and G1.y>300"
+wget  -O gal61-40.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<500   and G1.x>450 and G1.y<400   and G1.y>300"
+wget  -O gal60-40.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<500   and G1.x>450 and G1.y<400   and G1.y>300"
+wget  -O gal59-40.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<500   and G1.x>450 and G1.y<400   and G1.y>300"
+wget  -O gal58-40.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<500   and G1.x>450 and G1.y<400   and G1.y>300"
+wget  -O gal63-41.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<50   and G1.x>0 and G1.y<500   and G1.y>400"
+wget  -O gal62-41.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<50   and G1.x>0 and G1.y<500   and G1.y>400"
+wget  -O gal61-41.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<50   and G1.x>0 and G1.y<500   and G1.y>400"
+wget  -O gal60-41.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<50   and G1.x>0 and G1.y<500   and G1.y>400"
+wget  -O gal59-41.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<50   and G1.x>0 and G1.y<500   and G1.y>400"
+wget  -O gal58-41.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<50   and G1.x>0 and G1.y<500   and G1.y>400"
+wget  -O gal63-42.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<100   and G1.x>50 and G1.y<500   and G1.y>400"
+wget  -O gal62-42.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<100   and G1.x>50 and G1.y<500   and G1.y>400"
+wget  -O gal61-42.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<100   and G1.x>50 and G1.y<500   and G1.y>400"
+wget  -O gal60-42.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<100   and G1.x>50 and G1.y<500   and G1.y>400"
+wget  -O gal59-42.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<100   and G1.x>50 and G1.y<500   and G1.y>400"
+wget  -O gal58-42.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<100   and G1.x>50 and G1.y<500   and G1.y>400"
+wget  -O gal63-43.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<150   and G1.x>100 and G1.y<500   and G1.y>400"
+wget  -O gal62-43.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<150   and G1.x>100 and G1.y<500   and G1.y>400"
+wget  -O gal61-43.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<150   and G1.x>100 and G1.y<500   and G1.y>400"
+wget  -O gal60-43.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<150   and G1.x>100 and G1.y<500   and G1.y>400"
+wget  -O gal59-43.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<150   and G1.x>100 and G1.y<500   and G1.y>400"
+wget  -O gal58-43.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<150   and G1.x>100 and G1.y<500   and G1.y>400"
+wget  -O gal63-44.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<200   and G1.x>150 and G1.y<500   and G1.y>400"
+wget  -O gal62-44.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<200   and G1.x>150 and G1.y<500   and G1.y>400"
+wget  -O gal61-44.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<200   and G1.x>150 and G1.y<500   and G1.y>400"
+wget  -O gal60-44.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<200   and G1.x>150 and G1.y<500   and G1.y>400"
+wget  -O gal59-44.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<200   and G1.x>150 and G1.y<500   and G1.y>400"
+wget  -O gal58-44.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<200   and G1.x>150 and G1.y<500   and G1.y>400"
+wget  -O gal63-45.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<250   and G1.x>200 and G1.y<500   and G1.y>400"
+wget  -O gal62-45.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<250   and G1.x>200 and G1.y<500   and G1.y>400"
+wget  -O gal61-45.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<250   and G1.x>200 and G1.y<500   and G1.y>400"
+wget  -O gal60-45.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<250   and G1.x>200 and G1.y<500   and G1.y>400"
+wget  -O gal59-45.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<250   and G1.x>200 and G1.y<500   and G1.y>400"
+wget  -O gal58-45.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<250   and G1.x>200 and G1.y<500   and G1.y>400"
+wget  -O gal63-46.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<300   and G1.x>250 and G1.y<500   and G1.y>400"
+wget  -O gal62-46.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<300   and G1.x>250 and G1.y<500   and G1.y>400"
+wget  -O gal61-46.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<300   and G1.x>250 and G1.y<500   and G1.y>400"
+wget  -O gal60-46.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<300   and G1.x>250 and G1.y<500   and G1.y>400"
+wget  -O gal59-46.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<300   and G1.x>250 and G1.y<500   and G1.y>400"
+wget  -O gal58-46.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<300   and G1.x>250 and G1.y<500   and G1.y>400"
+wget  -O gal63-47.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<350   and G1.x>300 and G1.y<500   and G1.y>400"
+wget  -O gal62-47.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<350   and G1.x>300 and G1.y<500   and G1.y>400"
+wget  -O gal61-47.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<350   and G1.x>300 and G1.y<500   and G1.y>400"
+wget  -O gal60-47.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<350   and G1.x>300 and G1.y<500   and G1.y>400"
+wget  -O gal59-47.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<350   and G1.x>300 and G1.y<500   and G1.y>400"
+wget  -O gal58-47.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<350   and G1.x>300 and G1.y<500   and G1.y>400"
+wget  -O gal63-48.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<400   and G1.x>350 and G1.y<500   and G1.y>400"
+wget  -O gal62-48.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<400   and G1.x>350 and G1.y<500   and G1.y>400"
+wget  -O gal61-48.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<400   and G1.x>350 and G1.y<500   and G1.y>400"
+wget  -O gal60-48.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<400   and G1.x>350 and G1.y<500   and G1.y>400"
+wget  -O gal59-48.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<400   and G1.x>350 and G1.y<500   and G1.y>400"
+wget  -O gal58-48.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<400   and G1.x>350 and G1.y<500   and G1.y>400"
+wget  -O gal63-49.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<450   and G1.x>400 and G1.y<500   and G1.y>400"
+wget  -O gal62-49.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<450   and G1.x>400 and G1.y<500   and G1.y>400"
+wget  -O gal61-49.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<450   and G1.x>400 and G1.y<500   and G1.y>400"
+wget  -O gal60-49.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<450   and G1.x>400 and G1.y<500   and G1.y>400"
+wget  -O gal59-49.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<450   and G1.x>400 and G1.y<500   and G1.y>400"
+wget  -O gal58-49.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<450   and G1.x>400 and G1.y<500   and G1.y>400"
+wget  -O gal63-50.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=63 and S.snapnum=63   and G1.rDust<-15   and G1.x<500   and G1.x>450 and G1.y<500   and G1.y>400"
+wget  -O gal62-50.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=62 and S.snapnum=62   and G1.rDust<-15   and G1.x<500   and G1.x>450 and G1.y<500   and G1.y>400"
+wget  -O gal61-50.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=61 and S.snapnum=61   and G1.rDust<-15   and G1.x<500   and G1.x>450 and G1.y<500   and G1.y>400"
+wget  -O gal60-50.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=60 and S.snapnum=60   and G1.rDust<-15   and G1.x<500   and G1.x>450 and G1.y<500   and G1.y>400"
+wget  -O gal59-50.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=59 and S.snapnum=59   and G1.rDust<-15   and G1.x<500   and G1.x>450 and G1.y<500   and G1.y>400"
+wget  -O gal58-50.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,S.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from MField..FofSubHalo as S inner join Guo2010a..MR as G1 on S.subhaloId = G1.fofID where G1.snapnum=58 and S.snapnum=58   and G1.rDust<-15   and G1.x<500   and G1.x>450 and G1.y<500   and G1.y>400"
+
+
+
+
+
+
+
+
+
+wget  -O gal63-1.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=63    and G1.x<50   and G1.x>0 and G1.rDust<-15"
+wget  -O gal62-1.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=62    and G1.x<50   and G1.x>0 and G1.rDust<-15"
+wget  -O gal61-1.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=61    and G1.x<50   and G1.x>0 and G1.rDust<-15"
+wget  -O gal60-1.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=60    and G1.x<50   and G1.x>0 and G1.rDust<-15"
+wget  -O gal59-1.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=59    and G1.x<50   and G1.x>0 and G1.rDust<-15"
+wget  -O gal58-1.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=58    and G1.x<50   and G1.x>0 and G1.rDust<-15"
+
+wget  -O gal63-2.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=63    and G1.x<100   and G1.x>50 and G1.rDust<-15"
+wget  -O gal62-2.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=62    and G1.x<100   and G1.x>50 and G1.rDust<-15"
+wget  -O gal61-2.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=61    and G1.x<100   and G1.x>50 and G1.rDust<-15"
+wget  -O gal60-2.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=60    and G1.x<100   and G1.x>50 and G1.rDust<-15"
+wget  -O gal59-2.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=59    and G1.x<100   and G1.x>50 and G1.rDust<-15"
+wget  -O gal58-2.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=58    and G1.x<100   and G1.x>50 and G1.rDust<-15"
+
+wget  -O gal63-3.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=63    and G1.x<150   and G1.x>100 and G1.rDust<-15"
+wget  -O gal62-3.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=62    and G1.x<150   and G1.x>100 and G1.rDust<-15"
+wget  -O gal61-3.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=61    and G1.x<150   and G1.x>100 and G1.rDust<-15"
+wget  -O gal60-3.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=60    and G1.x<150   and G1.x>100 and G1.rDust<-15"
+wget  -O gal59-3.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=59    and G1.x<150   and G1.x>100 and G1.rDust<-15"
+wget  -O gal58-3.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=58    and G1.x<150   and G1.x>100 and G1.rDust<-15"
+
+wget  -O gal63-4.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=63    and G1.x<200   and G1.x>150 and G1.rDust<-15"
+wget  -O gal62-4.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=62    and G1.x<200   and G1.x>150 and G1.rDust<-15"
+wget  -O gal61-4.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=61    and G1.x<200   and G1.x>150 and G1.rDust<-15"
+wget  -O gal60-4.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=60    and G1.x<200   and G1.x>150 and G1.rDust<-15"
+wget  -O gal59-4.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=59    and G1.x<200   and G1.x>150 and G1.rDust<-15"
+wget  -O gal58-4.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=58    and G1.x<200   and G1.x>150 and G1.rDust<-15"
+
+wget  -O gal63-5.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=63    and G1.x<250   and G1.x>200 and G1.rDust<-15"
+wget  -O gal62-5.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=62    and G1.x<250   and G1.x>200 and G1.rDust<-15"
+wget  -O gal61-5.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=61    and G1.x<250   and G1.x>200 and G1.rDust<-15"
+wget  -O gal60-5.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=60    and G1.x<250   and G1.x>200 and G1.rDust<-15"
+wget  -O gal59-5.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=59    and G1.x<250   and G1.x>200 and G1.rDust<-15"
+wget  -O gal58-5.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=58    and G1.x<250   and G1.x>200 and G1.rDust<-15"
+
+wget  -O gal63-6.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=63    and G1.x<300   and G1.x>250 and G1.rDust<-15"
+wget  -O gal62-6.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=62    and G1.x<300   and G1.x>250 and G1.rDust<-15"
+wget  -O gal61-6.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=61    and G1.x<300   and G1.x>250 and G1.rDust<-15"
+wget  -O gal60-6.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=60    and G1.x<300   and G1.x>250 and G1.rDust<-15"
+wget  -O gal59-6.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=59    and G1.x<300   and G1.x>250 and G1.rDust<-15"
+wget  -O gal58-6.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=58    and G1.x<300   and G1.x>250 and G1.rDust<-15"
+
+wget  -O gal63-7.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=63    and G1.x<350   and G1.x>300 and G1.rDust<-15"
+wget  -O gal62-7.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=62    and G1.x<350   and G1.x>300 and G1.rDust<-15"
+wget  -O gal61-7.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=61    and G1.x<350   and G1.x>300 and G1.rDust<-15"
+wget  -O gal60-7.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=60    and G1.x<350   and G1.x>300 and G1.rDust<-15"
+wget  -O gal59-7.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=59    and G1.x<350   and G1.x>300 and G1.rDust<-15"
+wget  -O gal58-7.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=58    and G1.x<350   and G1.x>300 and G1.rDust<-15"
+
+wget  -O gal63-8.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=63    and G1.x<400   and G1.x>350 and G1.rDust<-15"
+wget  -O gal62-8.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=62    and G1.x<400   and G1.x>350 and G1.rDust<-15"
+wget  -O gal61-8.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=61    and G1.x<400   and G1.x>350 and G1.rDust<-15"
+wget  -O gal60-8.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=60    and G1.x<400   and G1.x>350 and G1.rDust<-15"
+wget  -O gal59-8.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=59    and G1.x<400   and G1.x>350 and G1.rDust<-15"
+wget  -O gal58-8.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=58    and G1.x<400   and G1.x>350 and G1.rDust<-15"
+
+wget  -O gal63-9.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=63    and G1.x<450   and G1.x>400 and G1.rDust<-15"
+wget  -O gal62-9.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=62    and G1.x<450   and G1.x>400 and G1.rDust<-15"
+wget  -O gal61-9.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=61    and G1.x<450   and G1.x>400 and G1.rDust<-15"
+wget  -O gal60-9.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=60    and G1.x<450   and G1.x>400 and G1.rDust<-15"
+wget  -O gal59-9.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=59    and G1.x<450   and G1.x>400 and G1.rDust<-15"
+wget  -O gal58-9.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=58    and G1.x<450   and G1.x>400 and G1.rDust<-15"
+
+wget  -O gal63-10.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=63    and G1.x<500   and G1.x>450 and G1.rDust<-15"
+wget  -O gal62-10.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=62    and G1.x<500   and G1.x>450 and G1.rDust<-15"
+wget  -O gal61-10.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=61    and G1.x<500   and G1.x>450 and G1.rDust<-15"
+wget  -O gal60-10.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=60    and G1.x<500   and G1.x>450 and G1.rDust<-15"
+wget  -O gal59-10.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=59    and G1.x<500   and G1.x>450 and G1.rDust<-15"
+wget  -O gal58-10.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL=select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.gDust,G1.rDust,G1.iDust  from Guo2010a..MR as G1 where G1.snapnum=58    and G1.x<500   and G1.x>450 and G1.rDust<-15"
+
+
+
+
+
+
+
+
+
+
+select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np
+  from MField..FOF as F
+ where F.snapnum=63
+
+ 
+ 
+ wget  -O fof63-1.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=63 and F.x<50   and F.x>0"
+ wget  -O fof62-1.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=62 and F.x<50   and F.x>0"
+ wget  -O fof61-1.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=61 and F.x<50   and F.x>0"
+ wget  -O fof60-1.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=60 and F.x<50   and F.x>0"
+ wget  -O fof59-1.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=59 and F.x<50   and F.x>0"
+ wget  -O fof58-1.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=58 and F.x<50   and F.x>0"
+
+ wget  -O fof63-2.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=63 and F.x<100   and F.x>50"
+ wget  -O fof62-2.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=62 and F.x<100   and F.x>50"
+ wget  -O fof61-2.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=61 and F.x<100   and F.x>50"
+ wget  -O fof60-2.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=60 and F.x<100   and F.x>50"
+ wget  -O fof59-2.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=59 and F.x<100   and F.x>50"
+ wget  -O fof58-2.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=58 and F.x<100   and F.x>50"
+
+ wget  -O fof63-3.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=63 and F.x<150   and F.x>100"
+ wget  -O fof62-3.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=62 and F.x<150   and F.x>100"
+ wget  -O fof61-3.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=61 and F.x<150   and F.x>100"
+ wget  -O fof60-3.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=60 and F.x<150   and F.x>100"
+ wget  -O fof59-3.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=59 and F.x<150   and F.x>100"
+ wget  -O fof58-3.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=58 and F.x<150   and F.x>100"
+
+ wget  -O fof63-4.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=63 and F.x<200   and F.x>150"
+ wget  -O fof62-4.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=62 and F.x<200   and F.x>150"
+ wget  -O fof61-4.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=61 and F.x<200   and F.x>150"
+ wget  -O fof60-4.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=60 and F.x<200   and F.x>150"
+ wget  -O fof59-4.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=59 and F.x<200   and F.x>150"
+ wget  -O fof58-4.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=58 and F.x<200   and F.x>150"
+
+ wget  -O fof63-5.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=63 and F.x<250   and F.x>200"
+ wget  -O fof62-5.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=62 and F.x<250   and F.x>200"
+ wget  -O fof61-5.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=61 and F.x<250   and F.x>200"
+ wget  -O fof60-5.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=60 and F.x<250   and F.x>200"
+ wget  -O fof59-5.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=59 and F.x<250   and F.x>200"
+ wget  -O fof58-5.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=58 and F.x<250   and F.x>200"
+
+ wget  -O fof63-6.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=63 and F.x<300   and F.x>250"
+ wget  -O fof62-6.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=62 and F.x<300   and F.x>250"
+ wget  -O fof61-6.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=61 and F.x<300   and F.x>250"
+ wget  -O fof60-6.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=60 and F.x<300   and F.x>250"
+ wget  -O fof59-6.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=59 and F.x<300   and F.x>250"
+ wget  -O fof58-6.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=58 and F.x<300   and F.x>250"
+
+ wget  -O fof63-7.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=63 and F.x<350   and F.x>300"
+ wget  -O fof62-7.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=62 and F.x<350   and F.x>300"
+ wget  -O fof61-7.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=61 and F.x<350   and F.x>300"
+ wget  -O fof60-7.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=60 and F.x<350   and F.x>300"
+ wget  -O fof59-7.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=59 and F.x<350   and F.x>300"
+ wget  -O fof58-7.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=58 and F.x<350   and F.x>300"
+
+ wget  -O fof63-8.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=63 and F.x<400   and F.x>350"
+ wget  -O fof62-8.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=62 and F.x<400   and F.x>350"
+ wget  -O fof61-8.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=61 and F.x<400   and F.x>350"
+ wget  -O fof60-8.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=60 and F.x<400   and F.x>350"
+ wget  -O fof59-8.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=59 and F.x<400   and F.x>350"
+ wget  -O fof58-8.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=58 and F.x<400   and F.x>350"
+
+ wget  -O fof63-9.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=63 and F.x<450   and F.x>400"
+ wget  -O fof62-9.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=62 and F.x<450   and F.x>400"
+ wget  -O fof61-9.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=61 and F.x<450   and F.x>400"
+ wget  -O fof60-9.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=60 and F.x<450   and F.x>400"
+ wget  -O fof59-9.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=59 and F.x<450   and F.x>400"
+ wget  -O fof58-0.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=58 and F.x<450   and F.x>400"
+
+ wget  -O fof63-10.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=63 and F.x<500   and F.x>450"
+ wget  -O fof62-10.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=62 and F.x<500   and F.x>450"
+ wget  -O fof61-10.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=61 and F.x<500   and F.x>450"
+ wget  -O fof60-10.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=60 and F.x<500   and F.x>450"
+ wget  -O fof59-10.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=59 and F.x<500   and F.x>450"
+ wget  -O fof58-10.txt --http-user=csaulder --http-passwd=ulniXXSo "http://gavo.mpa-garching.mpg.de/MyMillennium/?action=doQuery&SQL= select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np  from MField..FOF as F where F.snapnum=58 and F.x<500   and F.x>450"
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np
+  from MField..FOF as F
+ where F.snapnum=63
+   and F.x<350
+   and F.y<350
+   and F.z<175
+   and F.x>0
+   and F.y>0
+   and F.z>0
+  
+select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np
+  from MField..FOF as F
+ where F.snapnum=63
+   and F.x<350
+   and F.y<350
+   and F.z<350
+   and F.x>0
+   and F.y>0
+   and F.z>175
+
+ 
+ 
+ 
+ 
+ select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np
+  from MField..FOF as F
+ where F.snapnum=62
+   and F.x<350
+   and F.y<350
+   and F.z<175
+   and F.x>0
+   and F.y>0
+   and F.z>0
+  
+select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np
+  from MField..FOF as F
+ where F.snapnum=62
+   and F.x<350
+   and F.y<350
+   and F.z<350
+   and F.x>0
+   and F.y>0
+   and F.z>175
+
+   
+   
+   
+   
+  select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np
+  from MField..FOF as F
+ where F.snapnum=61
+   and F.x<350
+   and F.y<350
+   and F.z<175
+   and F.x>0
+   and F.y>0
+   and F.z>0
+  
+select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np
+  from MField..FOF as F
+ where F.snapnum=61
+   and F.x<350
+   and F.y<350
+   and F.z<350
+   and F.x>0
+   and F.y>0
+   and F.z>175
+
+ 
+ 
+ 
+ 
+   select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np
+  from MField..FOF as F
+ where F.snapnum=60
+   and F.x<350
+   and F.y<350
+   and F.z<175
+   and F.x>0
+   and F.y>0
+   and F.z>0
+  
+select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np
+  from MField..FOF as F
+ where F.snapnum=60
+   and F.x<350
+   and F.y<350
+   and F.z<350
+   and F.x>0
+   and F.y>0
+   and F.z>175
+
+ 
+ 
+ 
+ 
+    select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np
+  from MField..FOF as F
+ where F.snapnum=59
+   and F.x<350
+   and F.y<350
+   and F.z<175
+   and F.x>0
+   and F.y>0
+   and F.z>0
+  
+select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np
+  from MField..FOF as F
+ where F.snapnum=59
+   and F.x<350
+   and F.y<350
+   and F.z<350
+   and F.x>0
+   and F.y>0
+   and F.z>175
+
+ 
+ 
+ 
+ 
+    select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np
+  from MField..FOF as F
+ where F.snapnum=58
+   and F.x<350
+   and F.y<350
+   and F.z<175
+   and F.x>0
+   and F.y>0
+   and F.z>0
+  
+select F.fofId,F.x,F.y,F.z,F.m_Crit200,F.r_crit200,F.numSubGroups,F.np
+  from MField..FOF as F
+ where F.snapnum=58
+   and F.x<350
+   and F.y<350
+   and F.z<350
+   and F.x>0
+   and F.y>0
+   and F.z>175
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.g_mag,G1.r_mag,G1.i_mag,G1.gDust,G1.rDust,G1.iDust
+  from Guo2010a..MR as G1
+ where G1.snapnum=63
+   and G1.x<350
+   and G1.y<350
+   and G1.z<175
+   and G1.x>0
+   and G1.y>0
+   and G1.z>0
+   and G1.r_mag<-15
+
+ select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.g_mag,G1.r_mag,G1.i_mag,G1.gDust,G1.rDust,G1.iDust
+  from Guo2010a..MR as G1
+ where G1.snapnum=63
+   and G1.x<350
+   and G1.y<350
+   and G1.z<250
+   and G1.x>0
+   and G1.y>0
+   and G1.z>175
+   and G1.r_mag<-15
+
+ select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.g_mag,G1.r_mag,G1.i_mag,G1.gDust,G1.rDust,G1.iDust
+  from Guo2010a..MR as G1
+ where G1.snapnum=63
+   and G1.x<350
+   and G1.y<350
+   and G1.z<350
+   and G1.x>0
+   and G1.y>0
+   and G1.z>250
+   and G1.r_mag<-15
+
+ 
+ 
+
+ 
+  select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.g_mag,G1.r_mag,G1.i_mag,G1.gDust,G1.rDust,G1.iDust
+  from Guo2010a..MR as G1
+ where G1.snapnum=62
+   and G1.x<350
+   and G1.y<350
+   and G1.z<175
+   and G1.x>0
+   and G1.y>0
+   and G1.z>0
+   and G1.r_mag<-15
+
+ select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.g_mag,G1.r_mag,G1.i_mag,G1.gDust,G1.rDust,G1.iDust
+  from Guo2010a..MR as G1
+ where G1.snapnum=62
+   and G1.x<350
+   and G1.y<350
+   and G1.z<250
+   and G1.x>0
+   and G1.y>0
+   and G1.z>175
+   and G1.r_mag<-15
+
+ select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.g_mag,G1.r_mag,G1.i_mag,G1.gDust,G1.rDust,G1.iDust
+  from Guo2010a..MR as G1
+ where G1.snapnum=62
+   and G1.x<350
+   and G1.y<350
+   and G1.z<350
+   and G1.x>0
+   and G1.y>0
+   and G1.z>250
+   and G1.r_mag<-15
+ 
+ 
+ 
+ 
+ 
+  select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.g_mag,G1.r_mag,G1.i_mag,G1.gDust,G1.rDust,G1.iDust
+  from Guo2010a..MR as G1
+ where G1.snapnum=61
+   and G1.x<350
+   and G1.y<350
+   and G1.z<100
+   and G1.x>0
+   and G1.y>0
+   and G1.z>0
+   and G1.r_mag<-15
+   
+  select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.g_mag,G1.r_mag,G1.i_mag,G1.gDust,G1.rDust,G1.iDust
+  from Guo2010a..MR as G1
+ where G1.snapnum=61
+   and G1.x<350
+   and G1.y<350
+   and G1.z<175
+   and G1.x>0
+   and G1.y>0
+   and G1.z>100
+   and G1.r_mag<-15
+
+ select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.g_mag,G1.r_mag,G1.i_mag,G1.gDust,G1.rDust,G1.iDust
+  from Guo2010a..MR as G1
+ where G1.snapnum=61
+   and G1.x<350
+   and G1.y<350
+   and G1.z<250
+   and G1.x>0
+   and G1.y>0
+   and G1.z>175
+   and G1.r_mag<-15
+
+ select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.g_mag,G1.r_mag,G1.i_mag,G1.gDust,G1.rDust,G1.iDust
+  from Guo2010a..MR as G1
+ where G1.snapnum=61
+   and G1.x<350
+   and G1.y<350
+   and G1.z<350
+   and G1.x>0
+   and G1.y>0
+   and G1.z>250
+   and G1.r_mag<-15
+ 
+ 
+ 
+ 
+ 
+select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.g_mag,G1.r_mag,G1.i_mag,G1.gDust,G1.rDust,G1.iDust
+  from Guo2010a..MR as G1
+ where G1.snapnum=60
+   and G1.x<350
+   and G1.y<350
+   and G1.z<100
+   and G1.x>0
+   and G1.y>0
+   and G1.z>0
+   and G1.r_mag<-15
+   
+  select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.g_mag,G1.r_mag,G1.i_mag,G1.gDust,G1.rDust,G1.iDust
+  from Guo2010a..MR as G1
+ where G1.snapnum=60
+   and G1.x<350
+   and G1.y<350
+   and G1.z<175
+   and G1.x>0
+   and G1.y>0
+   and G1.z>100
+   and G1.r_mag<-15
+
+ select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.g_mag,G1.r_mag,G1.i_mag,G1.gDust,G1.rDust,G1.iDust
+  from Guo2010a..MR as G1
+ where G1.snapnum=60
+   and G1.x<350
+   and G1.y<350
+   and G1.z<250
+   and G1.x>0
+   and G1.y>0
+   and G1.z>175
+   and G1.r_mag<-15
+
+ select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.g_mag,G1.r_mag,G1.i_mag,G1.gDust,G1.rDust,G1.iDust
+  from Guo2010a..MR as G1
+ where G1.snapnum=60
+   and G1.x<350
+   and G1.y<350
+   and G1.z<350
+   and G1.x>0
+   and G1.y>0
+   and G1.z>250
+   and G1.r_mag<-15    
+     
+     
+     
+     
+     
+     select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.g_mag,G1.r_mag,G1.i_mag,G1.gDust,G1.rDust,G1.iDust
+  from Guo2010a..MR as G1
+ where G1.snapnum=59
+   and G1.x<350
+   and G1.y<350
+   and G1.z<50
+   and G1.x>0
+   and G1.y>0
+   and G1.z>0
+   and G1.r_mag<-15
+   
+ select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.g_mag,G1.r_mag,G1.i_mag,G1.gDust,G1.rDust,G1.iDust
+  from Guo2010a..MR as G1
+ where G1.snapnum=59
+   and G1.x<350
+   and G1.y<350
+   and G1.z<100
+   and G1.x>0
+   and G1.y>0
+   and G1.z>50
+   and G1.r_mag<-15
+   
+  select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.g_mag,G1.r_mag,G1.i_mag,G1.gDust,G1.rDust,G1.iDust
+  from Guo2010a..MR as G1
+ where G1.snapnum=59
+   and G1.x<350
+   and G1.y<350
+   and G1.z<175
+   and G1.x>0
+   and G1.y>0
+   and G1.z>100
+   and G1.r_mag<-15
+
+ select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.g_mag,G1.r_mag,G1.i_mag,G1.gDust,G1.rDust,G1.iDust
+  from Guo2010a..MR as G1
+ where G1.snapnum=59
+   and G1.x<350
+   and G1.y<350
+   and G1.z<250
+   and G1.x>0
+   and G1.y>0
+   and G1.z>175
+   and G1.r_mag<-15
+
+ select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.g_mag,G1.r_mag,G1.i_mag,G1.gDust,G1.rDust,G1.iDust
+  from Guo2010a..MR as G1
+ where G1.snapnum=59
+   and G1.x<350
+   and G1.y<350
+   and G1.z<300
+   and G1.x>0
+   and G1.y>0
+   and G1.z>250
+   and G1.r_mag<-15    
+   
+    select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.g_mag,G1.r_mag,G1.i_mag,G1.gDust,G1.rDust,G1.iDust
+  from Guo2010a..MR as G1
+ where G1.snapnum=59
+   and G1.x<350
+   and G1.y<350
+   and G1.z<350
+   and G1.x>0
+   and G1.y>0
+   and G1.z>300
+   and G1.r_mag<-15   
+     
+     
+     
+     
+     
+          select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.g_mag,G1.r_mag,G1.i_mag,G1.gDust,G1.rDust,G1.iDust
+  from Guo2010a..MR as G1
+ where G1.snapnum=58
+   and G1.x<350
+   and G1.y<350
+   and G1.z<50
+   and G1.x>0
+   and G1.y>0
+   and G1.z>0
+   and G1.r_mag<-15
+   
+ select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.g_mag,G1.r_mag,G1.i_mag,G1.gDust,G1.rDust,G1.iDust
+  from Guo2010a..MR as G1
+ where G1.snapnum=58
+   and G1.x<350
+   and G1.y<350
+   and G1.z<100
+   and G1.x>0
+   and G1.y>0
+   and G1.z>50
+   and G1.r_mag<-15
+   
+  select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.g_mag,G1.r_mag,G1.i_mag,G1.gDust,G1.rDust,G1.iDust
+  from Guo2010a..MR as G1
+ where G1.snapnum=58
+   and G1.x<350
+   and G1.y<350
+   and G1.z<175
+   and G1.x>0
+   and G1.y>0
+   and G1.z>100
+   and G1.r_mag<-15
+
+ select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.g_mag,G1.r_mag,G1.i_mag,G1.gDust,G1.rDust,G1.iDust
+  from Guo2010a..MR as G1
+ where G1.snapnum=58
+   and G1.x<350
+   and G1.y<350
+   and G1.z<250
+   and G1.x>0
+   and G1.y>0
+   and G1.z>175
+   and G1.r_mag<-15
+
+ select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.g_mag,G1.r_mag,G1.i_mag,G1.gDust,G1.rDust,G1.iDust
+  from Guo2010a..MR as G1
+ where G1.snapnum=58
+   and G1.x<350
+   and G1.y<350
+   and G1.z<300
+   and G1.x>0
+   and G1.y>0
+   and G1.z>250
+   and G1.r_mag<-15    
+   
+    select G1.galaxyID,G1.fofID,G1.x,G1.y,G1.z,G1.velX,G1.velY,G1.velZ,G1.np,G1.g_mag,G1.r_mag,G1.i_mag,G1.gDust,G1.rDust,G1.iDust
+  from Guo2010a..MR as G1
+ where G1.snapnum=58
+   and G1.x<350
+   and G1.y<350
+   and G1.z<350
+   and G1.x>0
+   and G1.y>0
+   and G1.z>300
+   and G1.r_mag<-15   
+   
+   
+   
+   

@@ -1,0 +1,13 @@
+2MRS_obs_galaxies_radecz.txt
+-----    basic mode:
+0
+av_l_2mass_obs.txt
+-----    b factor:
+0.02
+limiting magnitude
+11.766237397796957     
+2MRS
+magmin 
+-18 
+magmax
+-30

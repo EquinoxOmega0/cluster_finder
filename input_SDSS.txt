@@ -1,0 +1,13 @@
+SDSS_obs_galaxies_radecz.txt
+-----    basic mode:
+0
+av_l_sdss_obs.txt
+-----    b factor:
+0.02
+limiting magnitude
+17.776413641004755  
+SDSS
+magmin 
+-15
+magmax
+-30

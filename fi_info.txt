@@ -1,0 +1,63 @@
+ ============================================================
+     programme FINITE INFINITY REGIONS started
+ ============================================================
+ variables initalized
+ file sizes measured
+ arrays allocated
+                31506 clusters read in
+               229893 clusters read in
+       10840 masses read in
+        9187 masses read in
+        6609 masses read in
+        5676 masses read in
+        3918 masses read in
+        3415 masses read in
+        2630 masses read in
+        2336 masses read in
+        1685 masses read in
+        1530 masses read in
+         907 masses read in
+         826 masses read in
+ all data read in
+ densities binned
+ mass rescale functions fitted
+ parameters for combined catalogue calculated
+               402588 SDSS galaxies read in
+ SDSS weights calculated
+ Saturation calculated
+ Saturation+Malmquist calculated
+ Malmquist calculated
+   92315069.393705562     
+ SDSS completeness corrections calculated
+                43508 2MRS galaxies read in
+ 2MRS weights calculated
+ Malmquist calculated
+ 2MRS completeness corrections calculated
+   92.315069393705556     
+                22190 2MRS clusters removed for being to far away
+ redshift distortions and projection effects considered
+ linking lengths for crossmatch calibrated
+                10085 SDSS groups in the overlapping area
+                 1990 SDSS groups in overlap merged with                 1654 2MRS groups
+               237219 groups in basic catalogue
+ combined densities binned
+   1.2685577112833070E+018
+   2.9988020778034698E+024   8.3023687893573803E+025   8.6022489971377274E+025
+  0.39893441416256348      of the total matter density in catalogue after combination
+               189583 groups remain after first fi filtering
+ first fi rescaling
+  0.67423181283155698      of the total matter density after first rescaling
+ status:                    0               189583
+ status:               189583               171677
+               171677 groups remain after interative fi filtering
+  0.70577917199135931      of the total matter density in catalogue
+                52299
+                 2502
+   8.6022489971377274E+025   3.7260487543368619E+026  0.23086785934095219                                                                                                                                                                                             
+  0.20721941551512377      of total survey volume occupied by fi regions                                                                                                                                                                                              
+               154857 groups remain after density adjusted fi filtering                                                                                                                                                                                               
+  0.27443050224290355      of total volume occupied by fi regions after rescaling                                                                                                                                                                                     
+ all output written                                                                                                                                                                                                                                                   
+ ============================================================                                                                                                                                                                                                         
+     programme complete                                                                                                                                                                                                                                               
+ ============================================================   

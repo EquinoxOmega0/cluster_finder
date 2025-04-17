@@ -1,0 +1,84 @@
+select P.objID, P.ra, P.dec, P.b, P.l, S.z, P.cModelMag_g, P.cModelMag_r, P.cModelMag_i, P.cModelMagErr_g, P.cModelMagErr_r, P.cModelMagErr_i, P.extinction_g, P.extinction_r, P.extinction_i
+from PhotoObj as P left outer join SpecObj as S
+on P.objID = S.bestobjID
+where S.bestobjID<>0
+and P.type=3
+and S.class='GALAXY'
+and S.z<0.112
+and S.z>0
+and S.zWarning=0
+
+select P.objID, P.ra, P.dec, P.b, P.l, S.z, P.cModelMag_g, P.cModelMag_r, P.cModelMag_i, P.cModelMagErr_g, P.cModelMagErr_r, P.cModelMagErr_i, P.extinction_g, P.extinction_r, P.extinction_i
+from PhotoObj as P left outer join SpecObj as S
+on P.objID = S.bestobjID
+where S.bestobjID<>0
+and P.type=3
+and (S.class='GALAXY' OR S.class='QSO')
+and S.z<0.112
+and S.z>0
+and S.zWarning=0
+
+
+select P.objID
+from PhotoObj as P left outer join SpecObj as S
+on P.objID = S.bestobjID
+where S.bestobjID<>0
+and S.class='QSO'
+and S.z<0.11
+and S.z>0
+and S.zWarning=0
+
+
+select P.objID
+from PhotoObj as P left outer join SpecObj as S
+on P.objID = S.bestobjID
+where S.bestobjID<>0
+and S.class='UNKNOWN'
+and S.z<0.11
+and S.z>0
+and S.zWarning=0
+
+select P.objID
+from PhotoObj as P left outer join SpecObj as S
+on P.objID = S.bestobjID
+where S.bestobjID<>0
+and S.class='STAR'
+and S.z<0.11
+and S.z>0
+and S.zWarning=0
+
+
+
+
+
+
+
+
+
+
+select P.objID, P.ra, P.dec, P.b, P.l, S.z, P.petroMag_g, P.petroMag_r, P.petroMag_i, P.petroMagErr_g, P.petroMagErr_r, P.petroMagErr_i, P.extinction_g, P.extinction_r, P.extinction_i
+from PhotoObj as P left outer join SpecObj as S
+on P.objID = S.bestobjID
+where S.bestobjID<>0
+and P.type=3
+and S.class='GALAXY'
+and S.z<0.112
+and S.z>0
+and S.zWarning=0
+
+
+
+
+
+
+select P.objID, P.ra, P.dec, P.b, P.l, S.z, P.petroMag_g, P.petroMag_r, P.petroMag_i, P.petroMagErr_g, P.petroMagErr_r, P.petroMagErr_i, P.extinction_g, P.extinction_r, P.extinction_i
+from PhotoObj as P left outer join SpecObj as S
+on P.objID = S.bestobjID
+where S.bestobjID<>0
+and P.type=3
+and S.class='GALAXY'
+and S.z>0
+and S.zWarning=0
+
+
+

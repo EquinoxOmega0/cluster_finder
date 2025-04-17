@@ -1,0 +1,10 @@
+SDSS_galaxies_mock1_final.txt
+SDSS_galaxies_mock1_final_simid.txt
+SDSS_allgalaxies_mock1_id_file.txt
+1
+0.25 0.75 73.0
+0.5 0.5 0.5 1.0
+17.77  
+SDSS
+-15 -30
+2

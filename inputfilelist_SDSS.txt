@@ -1,0 +1,21 @@
+SDSS_real SDSS_obs_galaxies_radecz.txt
+SDSS_mock1 SDSS_galaxies_mock1_final.txt
+SDSS_mock2 SDSS_galaxies_mock2_final.txt
+SDSS_mock3 SDSS_galaxies_mock3_final.txt
+SDSS_mock4 SDSS_galaxies_mock4_final.txt
+SDSS_mock5 SDSS_galaxies_mock5_final.txt
+SDSS_mock6 SDSS_galaxies_mock6_final.txt
+SDSS_mock7 SDSS_galaxies_mock7_final.txt
+SDSS_mock8 SDSS_galaxies_mock8_final.txt
+SDSS_mock1 SDSS_allgalaxies_mock1_radecz.txt
+SDSS_mock2 SDSS_allgalaxies_mock2_radecz.txt
+SDSS_mock3 SDSS_allgalaxies_mock3_radecz.txt
+SDSS_mock4 SDSS_allgalaxies_mock4_radecz.txt
+SDSS_mock5 SDSS_allgalaxies_mock5_radecz.txt
+SDSS_mock6 SDSS_allgalaxies_mock6_radecz.txt
+SDSS_mock7 SDSS_allgalaxies_mock7_radecz.txt
+SDSS_mock8 SDSS_allgalaxies_mock8_radecz.txt
+-30 -15
+SDSS
+17.776413641004755    
+-23.75 -15.25

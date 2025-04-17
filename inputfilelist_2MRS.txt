@@ -1,0 +1,22 @@
+2MRS_real 2MRS_obs_galaxies_radecz.txt
+2MRS_mock1 2MRS_galaxies_mock1_final.txt
+2MRS_mock2 2MRS_galaxies_mock2_final.txt
+2MRS_mock3 2MRS_galaxies_mock3_final.txt
+2MRS_mock4 2MRS_galaxies_mock4_final.txt
+2MRS_mock5 2MRS_galaxies_mock5_final.txt
+2MRS_mock6 2MRS_galaxies_mock6_final.txt
+2MRS_mock7 2MRS_galaxies_mock7_final.txt
+2MRS_mock8 2MRS_galaxies_mock8_final.txt
+2MRS_mock1 2MRS_allgalaxies_mock1_radecz.txt
+2MRS_mock2 2MRS_allgalaxies_mock2_radecz.txt
+2MRS_mock3 2MRS_allgalaxies_mock3_radecz.txt
+2MRS_mock4 2MRS_allgalaxies_mock4_radecz.txt
+2MRS_mock5 2MRS_allgalaxies_mock5_radecz.txt
+2MRS_mock6 2MRS_allgalaxies_mock6_radecz.txt
+2MRS_mock7 2MRS_allgalaxies_mock7_radecz.txt
+2MRS_mock8 2MRS_allgalaxies_mock8_radecz.txt
+-30 -16.5
+2MRS
+11.766237     
+-25.75 -18.25
+ 

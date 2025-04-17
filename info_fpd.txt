@@ -1,0 +1,14 @@
+ ============================================================
+     programme FUNDAMENTAL PLANE DISTANCES started
+ ============================================================
+               229893 clusters will be used
+               402439 galaxies will be used
+               119063 elliptical galaxies used
+                49404 elliptical galaxies in the cluster catalogue
+                35849 clusters with elliptical galaxies
+                 5832 clusters with 2 or more elliptical galaxies
+                 2273 clusters with 3 or more elliptical galaxies
+                  803 clusters with 5 or more elliptical galaxies
+ ============================================================
+     programme complete
+ ============================================================
