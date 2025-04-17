@@ -1,0 +1,530 @@
+
+
+set term postscript eps enhanced color
+set output 'SDSS3.eps'
+# set xrange [ -16 : -26 ]
+# set yrange [ 0 : 0.01 ]
+# set xtics 2
+# set ytics 0.002
+# set xlabel " absolute magnitudes " font  ",20" 
+# set ylabel " weighted numbers " font  ",20"
+# set mxtics 2 
+# set mytics 2
+# set key font ",16"
+'SDSS_neighbours_3a.txt' with dots, 'SDSS_neighbours_3b.txt' with dots, 'SDSS_neighbours_3overlap.txt' with dots
+reset
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# set term postscript eps enhanced color
+# set output 'overlap.eps'
+# set multiplot layout 2,3 rowsfirst
+# set size ratio 0.8
+# 
+# 
+# 
+# unset multiplot
+# reset
+# 
+# #-------------------------------------------------------------------
+# 
+# 
+# set term postscript eps enhanced color
+# set output '2mass_sdss_transformation_fit.eps'
+# set multiplot layout 2,3 rowsfirst
+# set size ratio 0.8
+# 
+# 
+# set tmargin at screen 0.99
+# set bmargin at screen 0.54
+# set lmargin at screen 0.09
+# set rmargin at screen 0.39
+# 
+# set xrange [ 1.55 : 4.95 ]
+# set yrange [ 1.5 : 4.5 ]
+# set table 'test.dat'
+# splot 'edgeon_J.txt'
+# unset table
+# set xrange [ 1.55 : 4.95 ]
+# set yrange [ 1.5 : 4.5 ]
+# set xtics 0.5
+# set ytics 0.5
+# set xlabel " m_g-m_J [mag]" font  ",14"
+# set ylabel "d (m_g-m_r) + e (m_r-m_i) + f [mag]" font  ",14"
+# set key font ",14"
+# unset colorbox
+# unset key
+# set palette defined ( 0 '#FFFFFF',\
+#                       1 '#000fff',\
+#                       2 '#0090ff',\
+#                       3 '#0fffee',\
+#                       5 '#90ff70',\
+#                       10 '#ffee00',\
+#                       12 '#ff7000',\
+#                       14 '#ee0000',\
+#                       16 '#7f0000')
+# p 'test.dat' with image, x lt 7
+# 
+# set tmargin at screen 0.99
+# set bmargin at screen 0.54
+# set lmargin at screen 0.39
+# set rmargin at screen 0.69
+# 
+# set xrange [ 1.55 : 4.95 ]
+# set yrange [ 1.5 : 4.5 ]
+# set table 'test.dat'
+# splot 'edgeon_H.txt'
+# unset table
+# set xrange [ 1.55 : 4.95 ]
+# set yrange [ 1.5 : 4.5 ]
+# set xtics 0.5
+# set ytics 0.5
+# set xlabel " m_g-m_H [mag]" font  ",14"
+# unset ylabel 
+# unset ytics
+# # set ylabel "d (m_g-m_r) + e (m_r-m_i) + f " font  ",10"
+# set key font ",14"
+# unset colorbox
+# unset key
+# set palette defined ( 0 '#FFFFFF',\
+#                       1 '#000fff',\
+#                       2 '#0090ff',\
+#                       3 '#0fffee',\
+#                       5 '#90ff70',\
+#                       10 '#ffee00',\
+#                       12 '#ff7000',\
+#                       14 '#ee0000',\
+#                       16 '#7f0000')
+# p 'test.dat' with image, x lt 7
+# 
+# 
+# set tmargin at screen 0.99
+# set bmargin at screen 0.54
+# set lmargin at screen 0.69
+# set rmargin at screen 0.99
+# 
+# 
+# set xrange [ 1.55 : 4.95 ]
+# set yrange [ 1.5 : 4.5 ]
+# set table 'test.dat'
+# splot 'edgeon_Ks.txt'
+# unset table
+# set xrange [ 1.55 : 4.95 ]
+# set yrange [ 1.5 : 4.5 ]
+# set xtics 0.5
+# set ytics 0.5
+# set xlabel " m_g-m_K_s [mag]" font  ",14"
+# unset ytics
+# # set ylabel "d (m_g-m_r) + e (m_r-m_i) + f " font  ",14"
+# set key font ",14"
+# unset colorbox
+# unset key
+# set palette defined ( 0 '#FFFFFF',\
+#                       1 '#000fff',\
+#                       2 '#0090ff',\
+#                       3 '#0fffee',\
+#                       5 '#90ff70',\
+#                       10 '#ffee00',\
+#                       12 '#ff7000',\
+#                       14 '#ee0000',\
+#                       16 '#7f0000')
+# p 'test.dat' with image, x lt 7
+# 
+# 
+# set tmargin at screen 0.50
+# set bmargin at screen 0.09
+# set lmargin at screen 0.09
+# set rmargin at screen 0.39
+# 
+# set xrange [ 8.1 : 12.9 ]
+# set yrange [ -1 : 1 ]
+# set table 'test.dat'
+# splot 'delta_J_real_map.txt'
+# unset table
+# set xrange [ 8.1 : 12.9 ]
+# set yrange [ -1 : 1 ]
+# set xtics 1
+# set ytics 0.5
+# set xlabel " m_J [mag]" font  ",14"
+# set ylabel " {/Symbol D} (m_o_b_s-m_f_i_t) [mag]" font  ",14"
+# set key font ",14"
+# unset colorbox
+# unset key
+# set palette defined ( 0 '#FFFFFF',\
+#                       1 '#000fff',\
+#                       2 '#0090ff',\
+#                       3 '#0fffee',\
+#                       5 '#90ff70',\
+#                       10 '#ffee00',\
+#                       12 '#ff7000',\
+#                       14 '#ee0000',\
+#                       16 '#7f0000')
+# p 'test.dat' with image, 0 lt 7
+# 
+# set tmargin at screen 0.50
+# set bmargin at screen 0.09
+# set lmargin at screen 0.39
+# set rmargin at screen 0.69
+# 
+# set xrange [ 8.1 : 12.9 ]
+# set yrange [ -1 : 1 ]
+# set table 'test.dat'
+# splot 'delta_H_real_map.txt'
+# unset table
+# set xrange [ 8.1 : 12.9 ]
+# set yrange [ -1 : 1 ]
+# set xtics 1
+# set ytics 0.5
+# set xlabel " m_H [mag]" font  ",14"
+# set ylabel " {/Symbol D} (m_H_(_o_b_s_)-m_H_(_f_i_t_)) [mag]" font  ",14"
+# set key font ",14"
+# unset ytics
+# unset colorbox
+# unset ylabel 
+# unset key
+# set palette defined ( 0 '#FFFFFF',\
+#                       1 '#000fff',\
+#                       2 '#0090ff',\
+#                       3 '#0fffee',\
+#                       5 '#90ff70',\
+#                       10 '#ffee00',\
+#                       12 '#ff7000',\
+#                       14 '#ee0000',\
+#                       16 '#7f0000')
+# p 'test.dat' with image, 0 lt 7
+# 
+# 
+# 
+# set tmargin at screen 0.50
+# set bmargin at screen 0.09
+# set lmargin at screen 0.69
+# set rmargin at screen 0.99
+# 
+# set xrange [ 8.1 : 12.9 ]
+# set yrange [ -1 : 1 ]
+# set table 'test.dat'
+# splot 'delta_Ks_real_map.txt'
+# unset table
+# set xrange [ 8.1 : 12.9 ]
+# set yrange [ -1 : 1 ]
+# set xtics 1
+# set ytics 0.5
+# set xlabel " m_K_s [mag]" font  ",14"
+# unset ytics
+# 
+# set ylabel " {/Symbol D} (m_K_s_(_o_b_s_)-m_K_s_(_f_i_t_)) [mag]" font  ",14"
+# set key font ",14"
+# unset ylabel 
+# unset colorbox
+# unset key
+# set palette defined ( 0 '#FFFFFF',\
+#                       1 '#000fff',\
+#                       2 '#0090ff',\
+#                       3 '#0fffee',\
+#                       5 '#90ff70',\
+#                       10 '#ffee00',\
+#                       12 '#ff7000',\
+#                       14 '#ee0000',\
+#                       16 '#7f0000')
+# p 'test.dat' with image, 0 lt 7
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+# unset multiplot
+# reset
+# 
+# 
+# 
+# 
+# #-------------------------------------------------------------
+# 
+# 
+# 
+# set term postscript eps enhanced color
+# set output 'comparision_of_fits.eps'
+# set multiplot layout 2,2
+# 
+# set xrange [ 8.1 : 12.9 ]
+# set yrange [ -3 : 3 ]
+# set table 'test.dat'
+# splot 'delta_Ks_real_map.txt'
+# unset table
+# set xrange [ 8.1 : 12.9 ]
+# set yrange [ -3 : 3 ]
+# set xtics 1
+# set ytics 1
+# set xlabel " m_K_s [mag]" font  ",14"
+# 
+# set ylabel " {/Symbol D} (m_K_s_(_o_b_s_)-m_K_s_(_f_i_t_)) [mag]" font  ",14"
+# set key font ",14"
+# unset colorbox
+# unset key
+# set palette defined ( 0 '#FFFFFF',\
+#                       1 '#000fff',\
+#                       2 '#0090ff',\
+#                       3 '#0fffee',\
+#                       5 '#90ff70',\
+#                       10 '#ffee00',\
+#                       12 '#ff7000',\
+#                       14 '#ee0000',\
+#                       16 '#7f0000')
+# p 'test.dat' with image, 0 lt 7
+# 
+# 
+# 
+# set xrange [ 8.1 : 12.9 ]
+# set yrange [ -3 : 3 ]
+# set table 'test.dat'
+# splot 'delta_Ks_bilir_map.txt'
+# unset table
+# set xrange [ 8.1 : 12.9 ]
+# set yrange [ -3 : 3 ]
+# set xtics 1
+# set ytics 1
+# set xlabel " m_K_s [mag]" font  ",14"
+# 
+# set ylabel " {/Symbol D} (m_K_s_(_o_b_s_)-m_K_s_(_f_i_t_)) [mag]" font  ",14"
+# set key font ",14"
+# unset colorbox
+# unset key
+# set palette defined ( 0 '#FFFFFF',\
+#                       1 '#000fff',\
+#                       2 '#0090ff',\
+#                       3 '#0fffee',\
+#                       5 '#90ff70',\
+#                       10 '#ffee00',\
+#                       12 '#ff7000',\
+#                       14 '#ee0000',\
+#                       16 '#7f0000')
+# p 'test.dat' with image, 0 lt 7
+# 
+# 
+# set xrange [ 8.1 : 12.9 ]
+# set yrange [ -3 : 3 ]
+# set table 'test.dat'
+# splot 'delta_Ks_mill_map.txt'
+# unset table
+# set xrange [ 8.1 : 12.9 ]
+# set yrange [ -3 : 3 ]
+# set xtics 1
+# set ytics 1
+# set xlabel " m_K_s [mag]" font  ",14"
+# 
+# set ylabel " {/Symbol D} (m_K_s_(_o_b_s_)-m_K_s_(_f_i_t_)) [mag]" font  ",14"
+# set key font ",14"
+# unset colorbox
+# unset key
+# set palette defined ( 0 '#FFFFFF',\
+#                       1 '#000fff',\
+#                       2 '#0090ff',\
+#                       3 '#0fffee',\
+#                       5 '#90ff70',\
+#                       10 '#ffee00',\
+#                       12 '#ff7000',\
+#                       14 '#ee0000',\
+#                       16 '#7f0000')
+# p 'test.dat' with image, 0 lt 7
+# 
+# 
+# 
+# set xrange [ -12.1 : -25.9 ]
+# set yrange [ -3 : 3 ]
+# set table 'test.dat'
+# splot 'delta_Ks_bilirmill_map.txt'
+# unset table
+# set xrange [ -12.1 : -25.9 ]
+# set yrange [ -3 : 3 ]
+# set xtics 2
+# set ytics 1
+# set xlabel " M_K_s [mag]" font  ",14"
+# 
+# set ylabel " {/Symbol D} (m_K_s_(_o_b_s_)-m_K_s_(_f_i_t_)) [mag]" font  ",14"
+# set key font ",14"
+# unset colorbox
+# unset key
+# set palette defined ( 0 '#FFFFFF',\
+#                       1 '#000fff',\
+#                       2 '#0090ff',\
+#                       3 '#0fffee',\
+#                       5 '#90ff70',\
+#                       10 '#ffee00',\
+#                       12 '#ff7000',\
+#                       14 '#ee0000',\
+#                       16 '#7f0000')
+# p 'test.dat' with image, 0 lt 7
+# 
+# 
+# 
+# unset multiplot
+# reset
+# 
+# 
+# # 
+# 
+# #-------------------------------------------------------------------
+# 
+# set term postscript eps enhanced color
+# set output 'sdss_absmag_vs_d.eps'
+# set xrange [ 6 : 9 ]
+# set yrange [ -10 : -30 ]
+# set table 'test.dat'
+# splot 'sdss_absmag_vs_d.txt'
+# unset table
+# set xrange [ 6 : 9 ]
+# set yrange [ -10 : -30 ]
+# set xtics 0.5
+# set ytics 5
+# set xlabel " redshift " font  ",20"
+# set ylabel " luminosity distance log_1_0(d_L/pc)  " font  ",20"
+# set key font ",16"
+# unset colorbox
+# set palette defined ( 0 '#FFFFFF',\
+#                       1 '#000fff',\
+#                       2 '#0090ff',\
+#                       3 '#0fffee',\
+#                       5 '#90ff70',\
+#                       10 '#ffee00',\
+#                       12 '#ff7000',\
+#                       14 '#ee0000',\
+#                       16 '#7f0000')
+# p 'test.dat' with image
+# 
+# reset
+# #-------------------------------------------------------------------
+# 
+# set term postscript eps enhanced color
+# set output '2mass_absmag_vs_d.eps'
+# set xrange [ 6 : 9 ]
+# set yrange [ -10 : -39 ]
+# set table 'test.dat'
+# splot '2mass_absmag_vs_d.txt'
+# unset table
+# set xrange [ 6 : 9 ]
+# set yrange [ -10 : -30 ]
+# set xtics 0.5
+# set ytics 5
+# set xlabel " luminosity distance log_1_0(d_L/pc) " font  ",20"
+# set ylabel " absolute magnitudes [mag] " font  ",20"
+# set key font ",16"
+# unset colorbox
+# set palette defined ( 0 '#FFFFFF',\
+#                       1 '#000fff',\
+#                       2 '#0090ff',\
+#                       3 '#0fffee',\
+#                       5 '#90ff70',\
+#                       10 '#ffee00',\
+#                       12 '#ff7000',\
+#                       14 '#ee0000',\
+#                       16 '#7f0000')
+# p 'test.dat' with image
+# 
+# reset
+# 
+# #-------------------------------------------------------------------
+# 
+# set term postscript eps enhanced color
+# set output 'redshift_distribution.eps'
+# set xrange [ 0 : 0.11 ]
+# set yrange [ 0 : 0.15 ]
+# set xtics 0.02
+# set ytics 0.02
+# set xlabel " redshift " font  ",20" 
+# set ylabel " galaxy density [galaxies/Mpc^3] " font  ",20"
+# set mxtics 2 
+# set mytics 2
+# set key font ",16"
+# plot "redshift_distribution.txt" using 1:2  title 'SDSS' with histeps, "redshift_distribution.txt" using 1:3  title '2MRS' with histeps
+# reset
+# 
+# 
+# 
+# #-------------------------------------------------------------------
+# 
+# set term postscript eps enhanced color
+# load 'plot_luminosity_function_2MRS.txt'
+# set output 'average_luminosity_function_2MRS.eps'
+# set xrange [ -18 : -28 ]
+# set yrange [ -6 : -2 ]
+# set xtics 2
+# # set ytics 0.002
+# set xlabel " absolute magnitudes " font  ",20" 
+# set ylabel " weighted numbers " font  ",20"
+# set mxtics 2 
+# # set mytics 2
+# set key font ",16"
+# plot "log_luminosity_function_2MRS.txt" using 1:2 title 'real data' with histeps, "log_luminosity_function_2MRS.txt" using 1:3 title 'mock' with histeps, "log_luminosity_function_2MRS.txt" using 1:4 title 'all galaxies mock' with histeps, f1(x) title 'fit on real data',f2(x) title 'fit on mock', f3(x) title 'fit on all galaxies mock' lt 7
+# reset
+# 
+# set term postscript eps enhanced color
+# load 'plot_luminosity_function_SDSS.txt'
+# set output 'average_luminosity_function_SDSS.eps'
+# set xrange [ -15 : -25 ]
+# set yrange [ -10 : -2 ]
+# set xtics 2
+# # set ytics 0.002
+# set xlabel " absolute magnitudes " font  ",20" 
+# set ylabel " weighted numbers " font  ",20"
+# set mxtics 2 
+# # set mytics 2
+# set key font ",16"
+# plot "log_luminosity_function_SDSS.txt" using 1:2 title 'real data' with histeps, "log_luminosity_function_SDSS.txt" using 1:3 title 'mock' with histeps, "log_luminosity_function_SDSS.txt" using 1:4 title 'all galaxies mock' with histeps, f1(x) title 'fit on real data',f2(x) title 'fit on mock', f3(x) title 'fit on all galaxies mock' lt 7
+# reset
+
+
+# set term postscript eps enhanced color
+# set output 'fit_luminosity_function_2MRS.eps'
+# set xrange [ -16 : -26 ]
+# set yrange [ 0 : 0.01 ]
+# set xtics 2
+# set ytics 0.002
+# set xlabel " absolute magnitudes " font  ",20" 
+# set ylabel " weighted numbers " font  ",20"
+# set mxtics 2 
+# set mytics 2
+# set key font ",16"
+# plot "fitted_luminosity_function_2MRS.txt" using 1:2 title 'real data' with histeps, "fitted_luminosity_function_2MRS.txt" using 1:3 title 'mock' with histeps, "fitted_luminosity_function_2MRS.txt" using 1:4 title 'all galaxies mock' with histeps
+# reset
+# 
+# set term postscript eps enhanced color
+# load 'fitquad_plot_SDSS.txt'
+# set output 'fit_luminosity_function_SDSS.eps'
+# set xrange [ -15 : -25 ]
+# set yrange [ 0 : 0.01 ]
+# set xtics 2
+# set ytics 0.002
+# set xlabel " absolute magnitudes " font  ",20" 
+# set ylabel " weighted numbers " font  ",20"
+# set mxtics 2 
+# set mytics 2
+# set key font ",16"
+# plot "fitted_luminosity_function_SDSS.txt" using 1:2 title 'real data' with histeps, "fitted_luminosity_function_SDSS.txt" using 1:3 title 'mock' with histeps, "fitted_luminosity_function_SDSS.txt" using 1:4 title 'all galaxies mock' with histeps 
+# reset
+# 
+# 
+# 
+
+
+

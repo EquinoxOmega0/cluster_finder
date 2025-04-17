@@ -1,0 +1,53 @@
+ ============================================================
+     programme FINITE INFINITY CORRECTIONS started
+ ============================================================
+       31812 fof groups will be used
+    19682999 particles will be used
+       28912 galaxies will be used
+ arrays allocated
+ ------------------------------------------------------------
+ all data read in
+   46.609231316364372      % of all particles are in halos >=20 particles
+   36.423126555911196      % of all particles are in galaxies
+ mass in dark halos:  0.16893954173652445      %
+        1002 luminous halos
+   46.609231316364372      % of all particles are in halos >=20 particles
+ -------------------------------------------
+ finite infinity: percentage    10944160   55.602096001732257     
+ volume percentage:       94428   9.4428000000000001     
+ -------------------------------------------
+           1 iteration for fi
+         907 halos will be used after the filtering
+ inside finite infinity:    10990917   55.839646183998688     
+ -------------------------------------------
+           2 iteration for fi
+         857 halos will be used after the filtering
+ inside finite infinity:    12262772   62.301339343664040     
+ -------------------------------------------
+           3 iteration for fi
+         847 halos will be used after the filtering
+ inside finite infinity:    12569177   63.858038096735157     
+ -------------------------------------------
+           4 iteration for fi
+         839 halos will be used after the filtering
+ inside finite infinity:    12665154   64.345651798285417     
+ -------------------------------------------
+           5 iteration for fi
+         832 halos will be used after the filtering
+ inside finite infinity:    12707042   64.558464896533295     
+ -------------------------------------------                                                                                                                                                     
+           6 iteration for fi                                                                                                                                                                    
+         830 halos will be used after the filtering                                                                                                                                              
+ inside finite infinity:    12723731   64.643253804971494                                                                                                                                        
+ -------------------------------------------                                                                                                                                                     
+           7 iteration for fi                                                                                                                                                          
+         828 halos will be used after the filtering                                                                                                                                    
+ inside finite infinity:    12735539   64.703244663071928     
+ -------------------------------------------
+           8 iteration for fi
+         826 halos will be used after the filtering
+ inside finite infinity:    12745240   64.752530851624797     
+ -------------------------------------------
+ ============================================================
+     programme complete
+ ============================================================

@@ -1,0 +1,88 @@
+# Node:fit, Next:help, Previous:exit, Up:Commands
+# fit
+# 
+# The `fit` command can fit a user-defined function to a set of data points (x,y) or (x,y,z), using an implementation of the nonlinear least-squares (NLLS) Marquardt-Levenberg algorithm. Any user-defined variable occurring in the function body may serve as a fit parameter, but the return type of the function must be real.
+# 
+# Syntax:
+# 
+#            fit {[xrange] {[yrange]}} <function> '<datafile>'
+#                {datafile-modifiers}
+#                via '<parameter file>' | <var1>{,<var2>,...}
+#      
+#      
+# 
+# Ranges may be specified to temporarily limit the data which is to be fitted; any out-of-range data points are ignored. The syntax is
+# 
+#            [{dummy_variable=}{<min>}{:<max>}],
+#      
+# 
+# analogous to `plot`; see ranges.
+# 
+# <function> is any valid `gnuplot` expression, although it is usual to use a previously user-defined function of the form f(x) or f(x,y).
+# 
+# <datafile> is treated as in the `plot` command. All the `plot datafile` modifiers (using, every,...) except smooth and the deprecated thru are applicable to `fit`. See `plot datafile`.
+# 
+# The default data formats for fitting functions with a single independent variable, y=f(x), are {x:}y or x:y:s; those formats can be changed with the datafile using qualifier. The third item (a column number or an expression), if present, is interpreted as the standard deviation of the corresponding y value and is used to compute a weight for the datum, 1/s**2. Otherwise, all data points are weighted equally, with a weight of one. Note that if you don't specify a using option at all, no y deviations are read from the datafile even if it does have a third column, so you'll always get unit weights.
+# 
+# To fit a function with two independent variables, z=f(x,y), the required format is using with four items, x:y:z:s. The complete format must be given--no default columns are assumed for a missing token. Weights for each data point are evaluated from 's' as above. If error estimates are not available, a constant value can be specified as a constant expression (see using), e.g., `using 1:2:3:(1)`.
+# 
+# Multiple datasets may be simultaneously fit with functions of one independent variable by making y a 'pseudo-variable', e.g., the dataline number, and fitting as two independent variables. See multi-branch.
+# 
+# The `via` qualifier specifies which parameters are to be adjusted, either directly, or by referencing a parameter file.
+# 
+# Examples:
+
+# f(x,y)=P10*x+P11*x*y+P12*x*(y**2)+P13*x*(y**3)+P20*(x**2)+P21*(x**2)*y+P22*(x**2)*(y**2)+P23*(x**2)*(y**3)+P30*(x**3)+P31*(x**3)*y+P32*(x**3)*(y**2)+P40*(x**4)+P41*(x**4)*y+P50*(x**5)
+# FIT_LIMIT = 1e-6
+# fit f(x,y) 'basis_K_cor_2MRS_Ks.txt' using 1:2:3:(1) via P10,P11,P12,P13,P20,P21,P22,P23,P30,P31,P32,P40,P41,P50
+# 
+
+
+f(x,y)=P10*x+P11*x*y+P12*x*(y**2)+P13*x*(y**3)+P20*(x**2)+P21*(x**2)*y+P22*(x**2)*(y**2)+P23*(x**2)*(y**3)+P30*(x**3)+P31*(x**3)*y+P32*(x**3)*(y**2)+P40*(x**4)+P41*(x**4)*y+P50*(x**5)
+FIT_LIMIT = 1e-6
+fit f(x,y) 'basis_K_cor_2MRS_J.txt' using 1:2:3:(1) via P10,P11,P12,P13,P20,P21,P22,P23,P30,P31,P32,P40,P41,P50
+reset
+
+
+f(x,y)=P10*x+P11*x*y+P12*x*(y**2)+P13*x*(y**3)+P20*(x**2)+P21*(x**2)*y+P22*(x**2)*(y**2)+P23*(x**2)*(y**3)+P30*(x**3)+P31*(x**3)*y+P32*(x**3)*(y**2)+P40*(x**4)+P41*(x**4)*y+P50*(x**5)
+FIT_LIMIT = 1e-6
+fit f(x,y) 'basis_K_cor_2MRS_Ks.txt' using 1:2:3:(1) via P10,P11,P12,P13,P20,P21,P22,P23,P30,P31,P32,P40,P41,P50
+reset
+
+
+f(x,y)=P10*x+P11*x*y+P12*x*(y**2)+P13*x*(y**3)+P20*(x**2)+P21*(x**2)*y+P22*(x**2)*(y**2)+P23*(x**2)*(y**3)+P30*(x**3)+P31*(x**3)*y+P32*(x**3)*(y**2)+P40*(x**4)+P41*(x**4)*y+P50*(x**5)
+FIT_LIMIT = 1e-6
+fit f(x,y) 'basis_K_cor_SDSS_g.txt' using 1:2:3:(1) via P10,P11,P12,P13,P20,P21,P22,P23,P30,P31,P32,P40,P41,P50
+reset
+
+
+f(x,y)=P10*x+P11*x*y+P12*x*(y**2)+P13*x*(y**3)+P20*(x**2)+P21*(x**2)*y+P22*(x**2)*(y**2)+P23*(x**2)*(y**3)+P30*(x**3)+P31*(x**3)*y+P32*(x**3)*(y**2)+P40*(x**4)+P41*(x**4)*y+P50*(x**5)
+FIT_LIMIT = 1e-6
+fit f(x,y) 'basis_K_cor_SDSS_r.txt' using 1:2:3:(1) via P10,P11,P12,P13,P20,P21,P22,P23,P30,P31,P32,P40,P41,P50
+reset
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,37 @@
+use volume wights - (1=on)
+1
+redshift intervall - first value is the lower boundary, second value the upper boundary
+0.01	0.2
+number of K-correction coefficient in g-band (standard=7)
+7
+use additional redshift data with fingers of god corrected values (0=normal, 1=use them, 2=do not use them, but use the smaller sample)
+0
+limits in absolut magnitudes - first value is the upper boundery, the second value the lower boundary
+g-band 
+-25	-15
+r-band 
+-25	-15
+i-band 
+-25	-15
+z-band 
+-25	-15
+simplex restarts
+100
+modelmags (1=cModelMag, 2=deVaucolour and 3=Petrosian)
+2
+3sigma-clipping (1=on)
+1
+evolution (ugriz per z)
+1.07	1.07	1.07	1.07
+R0-cuts (griz) - lower limit
+-1	-1	-1	-1	-1
+R0-cuts (griz) - upper limit
+2.5	2.5	2.5	2.5
+automatic splitting (1=automatic, 0=manuel)
+0
+0.052	0.125
+use colour data (1=on)
+1
+cosmology: H0, Omega_M, Omega_lambda
+67.3	0.315	0.685
+

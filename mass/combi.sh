@@ -1,0 +1,15 @@
+#!/bin/sh
+cat all_mock/log_dep_multi_high_2MRS1.txt all_mock/log_dep_multi_high_2MRS2.txt all_mock/log_dep_multi_high_2MRS3.txt all_mock/log_dep_multi_high_2MRS4.txt all_mock/log_dep_multi_high_2MRS5.txt all_mock/log_dep_multi_high_2MRS6.txt all_mock/log_dep_multi_high_2MRS7.txt all_mock/log_dep_multi_high_2MRS8.txt > log_dep_multi_high_2MRS_combi.txt
+
+cat all_mock/log_dep_multi_low_2MRS1.txt all_mock/log_dep_multi_low_2MRS2.txt all_mock/log_dep_multi_low_2MRS3.txt all_mock/log_dep_multi_low_2MRS4.txt all_mock/log_dep_multi_low_2MRS5.txt all_mock/log_dep_multi_low_2MRS6.txt all_mock/log_dep_multi_low_2MRS7.txt all_mock/log_dep_multi_low_2MRS8.txt > log_dep_multi_low_2MRS_combi.txt
+
+cat all_mock/log_dep_single_2MRS1.txt all_mock/log_dep_single_2MRS2.txt all_mock/log_dep_single_2MRS3.txt all_mock/log_dep_single_2MRS4.txt all_mock/log_dep_single_2MRS5.txt all_mock/log_dep_single_2MRS6.txt all_mock/log_dep_single_2MRS7.txt all_mock/log_dep_single_2MRS8.txt > log_dep_single_2MRS_combi.txt
+
+
+cat all_mock/log_dep_multi_high_SDSS1.txt all_mock/log_dep_multi_high_SDSS2.txt all_mock/log_dep_multi_high_SDSS3.txt all_mock/log_dep_multi_high_SDSS4.txt all_mock/log_dep_multi_high_SDSS5.txt all_mock/log_dep_multi_high_SDSS6.txt all_mock/log_dep_multi_high_SDSS7.txt all_mock/log_dep_multi_high_SDSS8.txt > log_dep_multi_high_SDSS_combi.txt
+
+cat all_mock/log_dep_multi_low_SDSS1.txt all_mock/log_dep_multi_low_SDSS2.txt all_mock/log_dep_multi_low_SDSS3.txt all_mock/log_dep_multi_low_SDSS4.txt all_mock/log_dep_multi_low_SDSS5.txt all_mock/log_dep_multi_low_SDSS6.txt all_mock/log_dep_multi_low_SDSS7.txt all_mock/log_dep_multi_low_SDSS8.txt > log_dep_multi_low_SDSS_combi.txt
+
+cat all_mock/log_dep_single_SDSS1.txt all_mock/log_dep_single_SDSS2.txt all_mock/log_dep_single_SDSS3.txt all_mock/log_dep_single_SDSS4.txt all_mock/log_dep_single_SDSS5.txt all_mock/log_dep_single_SDSS6.txt all_mock/log_dep_single_SDSS7.txt all_mock/log_dep_single_SDSS8.txt > log_dep_single_SDSS_combi.txt
+
+
